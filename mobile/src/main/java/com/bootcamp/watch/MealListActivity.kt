@@ -36,10 +36,12 @@ class MealListActivity : AppCompatActivity(),
     }
 
     override fun mealClicked(meal: Meal) {
+        val gson = Gson()
         connectedNode?.forEach { node ->
-            val bytes = Gson().toJson(meal).toByteArray()
+            val bytes = gson.toJson(meal).toByteArray()
             Wearable.MessageApi.sendMessage(client, node.id, "/meal", bytes)
         }
+
     }
 
     override fun onConnected(p0: Bundle?) {

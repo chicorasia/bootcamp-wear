@@ -56,16 +56,17 @@ class MealActivity : Activity(), GoogleApiClient.ConnectionCallbacks {
     override fun onConnected(p0: Bundle?) {
         Wearable.MessageApi.addListener(client) { messageEvent ->
             currentMeal = Gson().fromJson(String(messageEvent.data), Meal::class.java)
+            updateView()
         }
-        updateView()
+
     }
 
     private fun updateView() {
         Log.i("wear-meal", "updateView() chamado!")
         currentMeal?.let {
             binding.mealTitle.text = it.title
-            binding.calories.text = "{$it.calories} calories"
-            binding.ingredients.text = it.ingredients.joinToString(", ")
+            binding.calories.text = "${it.calories} calories"
+            binding.ingredients.text = it.ingredients.joinToString(separator = ", ")
 
         }
     }

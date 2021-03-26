@@ -10,7 +10,7 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal|center_vertical"
         android:orientation="vertical"
         app:boxedEdges="all"
         tools:ignore="MissingPrefix">
@@ -21,9 +21,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
+            android:layout_gravity="center_horizontal"
             android:fontFamily="sans-serif-condensed-medium"
             android:text="Meal Title"
-            android:textAlignment="viewStart"
             android:textSize="18sp" />
 
         <TextView
@@ -31,8 +31,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-condensed"
+            android:layout_gravity="center_horizontal"
             android:text="100 kcal"
-            android:textAlignment="viewStart" />
+            />
 
         <TextView
             android:id="@+id/ingredients"
@@ -40,8 +41,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:fontFamily="sans-serif-condensed"
+            android:layout_gravity="center"
             android:text="Ingredients"
-            android:textAlignment="viewStart" />
+            />
 
         <ImageView
             android:id="@+id/star"
