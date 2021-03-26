@@ -1,6 +1,7 @@
 package com.bootcamp.watch
 
 import android.content.Context
+import br.com.chicorialabs.shared.Meal
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import java.io.BufferedReader
